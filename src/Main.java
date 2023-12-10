@@ -1,20 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.Function;
 
 public class Main {
+    public <T> void fill(T[] array, Function<Integer, T> valueProvider) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = valueProvider.apply(i);
+        }
+    }
+
     public static void main(String[] args) {
-//        StringBuilderWithUndo stringBuilderWithUndo = new StringBuilderWithUndo();
+//        Integer[] arrayToFill = new Integer[5];
+//        fill(arrayToFill, integer -> 2* integer * (1 + 34));
 //
-//        stringBuilderWithUndo.append("Hello, ");
-//        System.out.println(stringBuilderWithUndo); // Hello,
-//
-//        stringBuilderWithUndo.append("world!");
-//        System.out.println(stringBuilderWithUndo); // Hello, world!
-//
-//        stringBuilderWithUndo.undo();
-//        System.out.println(stringBuilderWithUndo); // Hello,
-//
-//        stringBuilderWithUndo.undo();
-//        System.out.println(stringBuilderWithUndo); //
+//        for (Integer value : arrayToFill) {
+//            System.out.print(value + " ");
+//        }
     }
 }
